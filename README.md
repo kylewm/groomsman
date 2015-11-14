@@ -61,7 +61,7 @@ kmahan@orin:~$ createuser kmahan
 kmahan@orin:~$ createdb redwind --owner=kmahan
 ```
 
-**Copy config.py.template to config.py and fill in details.** At a
+**Copy redwind.cfg.template to redwind.cfg and fill in details.** At a
 minimum, set the following keys:
 
 * `SECRET_KEY`: Used for securing your session. Can be anything at all
