@@ -113,7 +113,7 @@ from the /settings page.
 `uwsgi --http :5000 --module redwind:app` to run a simple local server
 on localhost:5000 as a sanity check (or to do local development work).
 
-In production `uwsgi uwsgi-prod.ini` will start the application server
+In production `uwsgi redwind.ini` will start the application server
 and qworker daemon.
 
 Note: for development, I actually prefer to use `uwsgi uwsgi-local.ini`,
