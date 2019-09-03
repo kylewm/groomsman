@@ -61,7 +61,7 @@ kmahan@orin:~$ createuser kmahan
 kmahan@orin:~$ createdb redwind --owner=kmahan
 ```
 
-**Copy config.py.template to config.py and fill in details.** At a
+**Copy redwind.cfg.template to redwind.cfg and fill in details.** At a
 minimum, set the following keys:
 
 * `SECRET_KEY`: Used for securing your session. Can be anything at all
@@ -213,7 +213,7 @@ table directly with SQL (`update SETTING set value='...' where
 key='author_bio';`).
 
 For local development, you can set the `BYPASS_INDIEAUTH = True` in
-your config.py. This will simply trust that whatever domain you give
+your redwind.cfg. This will simply trust that whatever domain you give
 it is your domain (obviously this is not a good idea in production).
 
 
@@ -243,7 +243,7 @@ of the settings page.
 Theme-support is provided by
 [Flask-Themes2](https://flask-themes2.readthedocs.org/en/latest/). They
 live in `redwind/themes/<theme-name>`. Set the `DEFAULT_THEME` key
-in config.py to use a different theme.
+in redwind.cfg to use a different theme.
 
 Admin page templates are kept separately in `redwind/templates/admin`,
 which is good for maintenance (you don't have to worry about them when
@@ -297,7 +297,7 @@ Run `./qworker.py` to start the work queue processor from the
 commandline. If you're using uWSGI, you can add the line
 `attach-daemon=qworker.py` to the ini file to have the process managed
 automatically by uWSGI. To enable redis-backed work queue, uncomment
-`REDIS_URL` and `REDIS_QUEUE_KEY` in config.py, then run
+`REDIS_URL` and `REDIS_QUEUE_KEY` in redwind.cfg, then run
 `./qworker.py` as usual. Jobs will be triggered almost immediately,
 instead of waiting up to 10 seconds for polling the DB.
 
